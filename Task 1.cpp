@@ -24,7 +24,7 @@ int GetStudentmarks(int I){
 
 int main()
 {
-//Getting students Name (But This is not working)
+//giving students their total marks 
 	for(int i=0;i<Student_ROWS;){
 		printf("Your Name Shoude Not Be more then 5 Carector's also not less then 5  Carector's\n");
 		printf("Student Add name = \n");
