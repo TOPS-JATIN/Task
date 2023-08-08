@@ -1,0 +1,79 @@
+#include<stdio.h>
+//Buying Mobile Another Task given by darson sir
+
+//Globle Space Where	
+int Choice;
+float UserNeed;
+char Continue;
+char Exit = 'y';
+
+void Samsung(float Item, float Cost){
+	printf("Thnks For Buying %f Peces At The Lowest Price Of %f \n",Item,Cost);
+};
+void Nokia(float Item, float Cost){
+		printf("Thnks For Buying %f Peces At The Lowest Price Of %f \n",Item,Cost);
+};
+void One_Plus(float Item, float Cost){
+		printf("Thnks For Buying %f Peces At The Lowest Price Of %f \n",Item,Cost);
+};
+void Apple_Iphone(float Item, float Cost){
+		printf("Thnks For Buying %f Peces At The Lowest Price Of %f \n",Item,Cost);
+};
+
+void Stock(float User_Need,int stoke,float Price){
+	if (User_Need > stoke){
+		printf("Sorry But We Do Not Have That Many Stoke \n" );
+		Exit= 'N';
+	}else{
+		printf("Sir Your Pick is Awsm \nUser Choice Stoke = %f \nPer pice rupee = %f \nTotal Cost = %f\nSir Would You Like To Continue \nType y To Continue \nType n To Exit \n",User_Need,Price,Price*User_Need);
+		scanf(" %c",&Continue);
+		if(Continue == 'n'){
+			Exit= 'N';
+		};
+	}
+	
+}
+
+
+
+int main(){
+	printf("Hi sir How can I Help You \nWe Have 4 Compny's Smart-Phone Enter which Ever Point Number You like \n1. Samsung \n2.Nokia \n3.One Plus \n4.Apple Iphone \nYour Choice = ");
+	scanf(" %d",&Choice);
+	fflush(stdin);
+
+	
+	if(Choice == 1){
+		printf("Nice Choice Sir \nSir How  Many samsung Are You Lookign For = ");
+			scanf(" %f",&UserNeed);
+		Stock(UserNeed,5,70000.12);
+		if(Exit != 'N'){
+			Samsung(UserNeed,70000.12*UserNeed);
+		}
+	}
+	else if(Choice == 2){
+		printf("Nice Choice Sir \nSir How  Many Nokia Are You Lookign For = ");
+			scanf(" %f",&UserNeed);
+		Stock(UserNeed,1000 , 3450.50);
+		if(Exit != 'N'){
+			Nokia(UserNeed,3450.50*UserNeed);
+		}
+	}
+	else if(Choice == 3){
+		printf("Nice Choice Sir \nSir How  Many One Plus Are You Lookign For = ");
+			scanf(" %f",&UserNeed);
+		Stock(UserNeed,50 , 50000.10);
+		if(Exit != 'N'){
+			One_Plus(UserNeed,50000.10*UserNeed);
+		}
+	}
+	else if(Choice == 4){
+		printf("Nice Choice Sir \nSir How  Many Apple Iphone Are You Lookign For = ");
+			scanf(" %f",&UserNeed);
+		Stock(UserNeed,1 , 120000.150);
+		if(Exit != 'N'){
+			Apple_Iphone(UserNeed,120000.150*UserNeed);
+		}
+	}
+	else{printf("Invalid Choice\n");}  
+	
+}
