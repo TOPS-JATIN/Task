@@ -1,0 +1,140 @@
+#include<stdio.h>
+// (For Debug ) Buying in a Restorent Another Task given by darson sir
+int Name[100] ;
+int GetName(){
+	for(int i=0;i<3;i++){
+		printf("Name \n");
+		scanf(" %d" ,&Name[i]);
+	}
+}
+int main(){
+	int Space = 3;
+	GetName();
+	for(int i=0; i<Space ; i++){
+		printf("i =  %d == Space = %d == Name[i] = %d \n",i,Space,Name[i]);
+		switch(Name[i]){
+				case '1':{
+					fflush(stdin);
+					printf("%d = Normal-Food \n",Name[i]);
+					break;
+				}
+				case '2':{
+					fflush(stdin);
+					printf("%d = Veg-Food \n",Name[i]);
+					break;
+				}
+				case '3':{
+					fflush(stdin);
+					printf("%d = Non-vegFood \n",Name[i]);
+					break;
+				}
+				default:{
+					break;
+				}
+			}  
+	}
+}
+*/	
+
+/*
+//Buying in a Restorent Another Task given by darson sir
+char Order;
+int CostomerBought = 0;
+int Option[100];
+int Price[100];
+int Total = 0;
+
+int giveMenu(){
+	printf("1.Normal-Food Price = 100	\n2.Veg-Food Price = 200 \n3.Non-vegFood Price = 300 \nEnterOption = ");
+   	scanf(" %d",&Option[CostomerBought]);
+   	
+	   switch(Option[CostomerBought]){
+			case 1:{
+				fflush(stdin);
+				Price[CostomerBought] = 100;
+				break;
+			}
+			case 2:{
+				fflush(stdin);
+				Price[CostomerBought] = 200;
+				break;
+			}
+			case 3:{
+				fflush(stdin);
+				Price[CostomerBought] = 300;
+				break;
+			}
+			default:{
+				break;
+			}
+		} ; 	
+	Total += Price[CostomerBought];
+	CostomerBought++;
+}
+
+int Welcome(){
+	
+	
+	if(CostomerBought > 0){
+		printf("Anything Else sir( y or n) = ");
+		scanf(" %c",&Order);
+		fflush(stdin);
+		if(Order == 'y' ||Order =='y'){
+			giveMenu();
+			return 0;
+		}else{
+			Order = 'n';
+			return 0;
+		}
+	}
+	giveMenu();
+}
+int main(){
+	printf("Welcome This is Our Restorent \nNow sir ");
+	printf("what Do You Need ( y or n) = ");
+	scanf(" %c",&Order);
+	fflush(stdin);
+	do{
+		fflush(stdin);
+		if(Order == 'y' || Order=='Y'){
+			Welcome();
+		}else{
+			Order = 'n';
+			CostomerBought--;
+		}
+		
+	}while(Order == 'y' || Order == 'Y');
+	
+	if(CostomerBought > 0){
+		printf("You Bought => \n");
+		for(int i=0;i<CostomerBought; i++){
+			//printf("i = %d == CB = %d == Option[i] = %d\n",i,CostomerBought,Option[i]);
+			switch(Option[i]){
+				case 1:{
+					fflush(stdin);
+					printf("%d = Normal-Food : Price = %d\n",Option[i],Price[i]);
+					break;
+				}
+				case 2:{
+					fflush(stdin);
+					printf("%d = Veg-Food : Price = %d\n",Option[i],Price[i]);
+					break;
+				}
+				case 3:{
+					fflush(stdin);
+					printf("%d = Non-vegFood : Price = %d\n",Option[i],Price[i]);
+					break;
+				}
+				default:{
+					break;
+				}
+			} ; 
+		}		
+		fflush(stdin);
+		printf("Total = %d \n",Total);
+		fflush(stdin);
+		printf("Heppy Meal \n");
+	}else{
+		printf("Hope To See You soon \n");
+	}
+} 
