@@ -1,0 +1,72 @@
+#include<stdio.h>
+//task Given By darsan Sir
+
+void All_rounder(){
+	float BatingRuns;
+ 	float BatingWickets;
+ 	
+	float BowllingRuns;
+ 	float BowllingWickets;
+ 	 	
+	printf("Now for Bating Tell Me How Many Runs You Have Given \n Runs = ");
+	scanf(" %f",&BatingRuns);
+	
+	printf("Now for Bating Tell Me How Many Wickets You Have Given \n Wickets = ");
+	scanf(" %f",&BatingWickets);
+	
+	printf("Now for Bowlling Tell Me How Many Runs You Have Given \n Runs = ");
+	scanf(" %f",&BowllingRuns);
+	
+	printf("Now for Bowlling Tell Me How Many Wickets You Have Given \n Wickets = ");
+	scanf(" %f",&BowllingWickets);
+	
+	printf("\n");
+	
+	float BatingAvrege = BatingRuns / BatingWickets;
+	float BowllingAvrege = BowllingRuns / BowllingWickets;
+	printf("Your Avrage is = %f \n", BatingAvrege + BowllingAvrege);
+	
+}
+void Batsman_And_Bowler(){
+	float Runs;
+ 	float Wickets;
+ 	
+	printf("Now Tell Me How Many Runs You Have Given \n Runs = ");
+	scanf(" %f",&Runs);
+	
+	printf("Now Tell Me How Many Wickets You Have Given \n Wickets = ");
+	scanf(" %f",&Wickets);
+	
+	float Avrege = Runs / Wickets;
+	printf("Your Avrage is = %f \n", Avrege);
+}
+int UserBasicInfo(){
+ 	char UserName[20];
+ 	int UserAge;
+ 	char UserCricketProfile[1];
+ 	float Matches;
+
+ 	printf("Tell Me Your Name = ");
+ 	scanf(" %s",&UserName);
+    
+    fflush(stdin);
+    printf("Tell Me Your Age = ");
+	scanf("%d",&UserAge);
+    fflush(stdin);
+     
+ 	printf("Nice %s \n",UserName);
+	printf("Now Tell Me How Many Matches You Have Played \n Matches = ");
+	scanf(" %f",&Matches);
+
+	fflush(stdin);
+	
+	printf("Tell Me Your CricketProfile \nIf your Batsman type 1 \nIf your Bowler type 2 \nIf your All_rounder type 3  \nAnswer = ");
+ 	gets(UserCricketProfile);
+
+ 	if(UserCricketProfile[0] == '1' || UserCricketProfile[0] == '2'){Batsman_And_Bowler();}
+ 	else if(UserCricketProfile[0] == '3'){All_rounder();}
+ 	else{printf("Invalid Input \n");}
+};
+int main(){
+	UserBasicInfo();
+}
